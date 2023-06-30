@@ -1,0 +1,84 @@
+.lang {
+  display: flex;
+  flex-direction: column;
+}
+
+.lang__menu {
+  @include list-reset();
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  padding: 20px 0;
+  top: 65px;
+  width: 180px;
+  opacity: 0;
+  z-index: 10;
+  background-color: $color-default-white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  animation: fadeOutFromBlock 0.5s ease-in-out;
+}
+
+.lang__menu--open {
+  display: flex;
+  animation: fadeInFromNone 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutFromBlock {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.lang__item {
+  padding: 5px 20px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $alice-blue;
+  }
+}
+
+.lang__button--child {
+  list-style: none;
+}
+
+.lang__button {
+  width: 80px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding-top: 7px;
+  height: 35px;
+  background: transparent;
+  position: relative;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    top: 11px;
+    position: absolute;
+    right: 0;
+
+    width: 15px;
+    height: 15px;
+    background-image: url("./../img/svg/arrow-down.svg");
+    background-repeat: no-repeat;
+  }
+}

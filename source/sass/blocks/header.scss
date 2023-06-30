@@ -1,0 +1,109 @@
+.header {
+  position: relative;
+  background-color: $color-default-white;
+  height: 100vh;
+  width: 100%;
+}
+
+.header__box {
+  align-items: center;
+  width: 100%;
+  max-height: 640px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+  background-color: $color-default-white;
+}
+
+.header__box-mobile {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 760px;
+  position: fixed;
+  margin-left: -40px;
+  padding: 35px 60px 0 40px;
+  background-color: $color-default-white;
+  z-index: 10;
+}
+
+.header__button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  width: 24px;
+  height: 14px;
+  background-image: url("./../img/svg/menu.svg");
+  background-repeat: no-repeat;
+
+  &--close {
+    width: 15px;
+    height: 14px;
+    background-image: url("./../img/svg/close.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+
+.isOpen {
+  display: block;
+  animation: fadeInFromNone 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutFromBlock {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.isClose {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  $color-default-white-space: nowrap;
+  border: 0;
+  opacity: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.animation {
+  animation: fadeInOut 1.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

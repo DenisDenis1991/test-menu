@@ -1,0 +1,12 @@
+.sub-menu__title {
+  @include style-reset;
+  font-size: 20px;
+}
+
+.sub-menu {
+  margin-top: 20px;
+}
+
+.sub-menu__item {
+  padding: 10px 0;
+}
